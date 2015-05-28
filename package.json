@@ -1,0 +1,14 @@
+{
+  "name": "my-project",
+  "version": "0.0.0",
+  "author": "",
+  "license": "ISC",
+  "main": "app/main.js",
+  "scripts": {
+    "dev": "webpack-dev-server --port 3002 --devtool eval --progress --colors --content-base build"
+  },
+  "dependencies": {
+    "react": "^0.13.1",
+    "webpack": "^1.8.10"
+  }
+}

@@ -1,0 +1,230 @@
+v0.23.0 - Tue, 26 May 2015 19:32:52 GMT
+---------------------------------------
+
+- [fd24317](../../commit/fd24317) [changed] Removed `collapsable` deprecated functionality.
+- [3ebac95](../../commit/3ebac95) [fixed] bug #731. `babel ES6 import` + `React` quirk.
+- [0c61f46](../../commit/0c61f46) [changed] Moving type=static out of Input
+- [2749cfd](../../commit/2749cfd) [added] CustomPropTypes.singlePropFrom
+- [536c3e0](../../commit/536c3e0) [fixed] Replaced document with ownerDocument in Modal
+- [91f0222](../../commit/91f0222) [changed] Update css-loader. Dev dependency.
+- [66e41a4](../../commit/66e41a4) [fixed] Fix scroll top calculation for overlays
+- [5313abe](../../commit/5313abe) [fixed] Modal is focused when opened, for improved accessibility
+- [50d058a](../../commit/50d058a) [fixed] server side rendering for Modal component
+- [c57d6b0](../../commit/c57d6b0) [changed] Update css-loader. Dev dependency.
+
+
+v0.22.6 - Wed, 20 May 2015 16:46:29 GMT
+---------------------------------------
+
+- [2a35eab](../../commit/2a35eab) [fixed] Fix CodeMirrorEditor binding
+- [5dc0ac2](../../commit/5dc0ac2) [added] Enable rootClose for OverlayTrigger
+
+
+v0.22.5 - Tue, 19 May 2015 20:40:51 GMT
+---------------------------------------
+
+- [dc7ef19](../../commit/dc7ef19) [added] dialogClassName prop to modal to be able to pass custom css class to modal-dialog div
+- [658fa39](../../commit/658fa39) [fixed] Remove unused variable
+
+
+v0.22.4 - Mon, 18 May 2015 16:53:06 GMT
+---------------------------------------
+
+- [9d17d56](../../commit/9d17d56) [added] Thumbnail component
+- [db018fa](../../commit/db018fa) [fixed] Put AMD modules under correct path
+- [0904adc](../../commit/0904adc) [added] Active property to MenuItem component
+- [1658142](../../commit/1658142) [added] Property for animation on Popover and Tooltip
+- [4f37560](../../commit/4f37560) [fixed] Update classnames dep version for Bower
+- [f6e7d67](../../commit/f6e7d67) [fixed] Bower cannot use code from react/lib.
+- [1531ac9](../../commit/1531ac9) [added] DropdownButton now applies onClick prop to Button
+- [ecb0861](../../commit/ecb0861) [fixed] Fix propType warning in ButtonInputExample
+- [592a346](../../commit/592a346) [fixed] Forward classes to panel title
+
+
+v0.22.3 - Thu, 14 May 2015 22:19:11 GMT
+---------------------------------------
+
+- [96baa15](../../commit/96baa15) [fixed] Fix propTypes for overlays
+
+
+v0.22.2 - Thu, 14 May 2015 20:36:17 GMT
+---------------------------------------
+
+- [03211db](../../commit/03211db) [fixed] Fit overlay within viewport boundary
+- [576827f](../../commit/576827f) [changed] Introducing ButtonInput
+
+
+v0.22.1 - Thu, 14 May 2015 17:54:32 GMT
+---------------------------------------
+
+- [d3f57c5](../../commit/d3f57c5) [added] TabbedArea allows disabled tabs
+
+
+v0.22.0 - Wed, 13 May 2015 18:31:52 GMT
+---------------------------------------
+
+- [061bef2](../../commit/061bef2) [fixed] update link to react-router-bootstrap in README
+- [0fb9b57](../../commit/0fb9b57) [changed] Updated extract-text-webpack-plugin. Dev dependency.
+- [ca689c0](../../commit/ca689c0) [changed] Updated eslint dev-dependency
+- [0f90799](../../commit/0f90799) [added] react-hot-loader when developing docs
+- [4cd5845](../../commit/4cd5845) [added] FormGroup/Input bsSize now propgates correctly as form-group-\* classes
+- [6ce8870](../../commit/6ce8870) [added] Introduction Page.
+- [1c6c74b](../../commit/1c6c74b) [fixed] Modal div.modal-content should not have hidden class
+- [51a205f](../../commit/51a205f) [changed] collapsable => collapsible property
+- [f77c955](../../commit/f77c955) [changed] Updated classnames dependency
+- [5a76e94](../../commit/5a76e94) [added] favicon
+- [8da11b4](../../commit/8da11b4) [added] convenience factories for non-JSX users in lib/factories
+
+
+v0.21.2 - Fri, 01 May 2015 19:36:56 GMT
+---------------------------------------
+
+- [a07aa20](../../commit/a07aa20) [fixed] Bug introduced by new deprecation code.
+- [fef8984](../../commit/fef8984) [fixed] #597 able to set ID on ListGroup
+
+
+v0.21.1 - Wed, 29 Apr 2015 21:44:50 GMT
+---------------------------------------
+
+- [3767c43](../../commit/3767c43) [added] Added buttonClassName to DropdownButton
+- [e59c4f8](../../commit/e59c4f8) [added] Clarification about implementing components.
+- [0105127](../../commit/0105127) [changed] Renamed Collapsable* => Collapsible*
+- [6b9c250](../../commit/6b9c250) [fixed] Fix for bug 547 in tools/release.
+- [b86e03e](../../commit/b86e03e) [fixed] ListGroup rendering a ul when ListGroupItem has onClick handler
+- [ddc8a85](../../commit/ddc8a85) [changed] Updated eslint dev-dependency
+- [18c22ba](../../commit/18c22ba) [changed] Updated style-loader dev-dependency
+- [01c16c1](../../commit/01c16c1) [changed] Updated css-loader dev-dependency
+- [c295a9a](../../commit/c295a9a) [fixed] ModalTrigger passes onFocus prop and onBlur prop to child
+- [131669b](../../commit/131669b) [fixed] ModalTrigger passes onMouseOver prop and onMouseOut prop to child
+- [1249eff](../../commit/1249eff) [fixed] OverlayTrigger passes onClick prop to child
+- [5f565b9](../../commit/5f565b9) [added] Docs example of passing component to navbar brand.
+- [7811ce2](../../commit/7811ce2) [added] Dry run and verbose options to release process
+- [22da8f9](../../commit/22da8f9) [fixed] ListGroup children array bugs. Fixes #548
+- [b17a7b3](../../commit/b17a7b3) [added] release-docs script
+- [4fedc95](../../commit/4fedc95) [fixed] Bug in Server vs Client side rendering of Navbar
+- [1d8b7c7](../../commit/1d8b7c7) [fixes] #516 [added] TabbedArea NavItem renderTab() className
+- [725deaa](../../commit/725deaa) [changed] Updated css-loader dev-dependency
+- [eb29b11](../../commit/eb29b11) [changed] Updated style-loader dev-dependency
+- [bc8cd5c](../../commit/bc8cd5c) [fixed] Fix for bug507.
+
+
+v0.21.0 - Tue, 21 Apr 2015 13:38:38 GMT
+---------------------------------------
+
+- [e92a64b](../../commit/e92a64b) [fixed] Handle multiple children in Badge
+- [c1b189f](../../commit/c1b189f) [changed] Updated babel* tools. dev-dependency
+- [a58eab5](../../commit/a58eab5) [fixed] Fix 'import from' => 'import'
+- [276c2bc](../../commit/276c2bc) [fixed] ProgressBar percentage issue when stacked
+- [e1c95b3](../../commit/e1c95b3) [changed] Renamed constants to styleMaps and added styleMaps.addStyle()
+- [20b608f](../../commit/20b608f) [fixed] Add missed semicolons.
+- [2111799](../../commit/2111799) [fixed] Remove unused variables.
+- [0e6b62a](../../commit/0e6b62a) [fixed] typo
+- [0c87128](../../commit/0c87128) [fixed] `ListGroup` outputs `<ul>` or `<div>` depending on `ListGroupItem` (defaults to `<ul>` if no `ListGroupItem`). `ListGroupItem` outputs `<li>` or `<a>` if `href` prop is set.
+
+
+v0.20.3 - Fri, 10 Apr 2015 19:50:22 GMT
+---------------------------------------
+
+- [3ecd393](../../commit/3ecd393) [fixed] Missing PropType Validations
+- [8a9e95c](../../commit/8a9e95c) [fixed] Include missing PropType validations
+- [6dfcf36](../../commit/6dfcf36) [changed] Internal variables classSet to classNames
+
+
+v0.20.2 - Tue, 07 Apr 2015 01:51:55 GMT
+---------------------------------------
+
+- [723ee4d](../../commit/723ee4d) [fixed] Release scripts usage of rimraf
+- [7175431](../../commit/7175431) [fixed] Don't try to access .ownerDocument on null
+- [a58cff9](../../commit/a58cff9) [fixed] Numerous ESlint warnings (Removes 145 warnings)
+- [c6c4108](../../commit/c6c4108) [added] Twitter follow link to docs page footer
+- [20472b9](../../commit/20472b9) [fixed] Windows build
+
+
+v0.20.1 - Sat, 04 Apr 2015 14:22:18 GMT
+---------------------------------------
+
+- [a060fbc](../../commit/a060fbc) [fixed] Re-add missing constants to public API
+
+
+v0.20.0 - Tue, 31 Mar 2015 13:04:40 GMT
+---------------------------------------
+
+- [f1438b5](../../commit/f1438b5) [changed] Updated eslint-plugin-react dev-dependency
+- [c8dda3f](../../commit/c8dda3f) [added] HuBoard badge and link
+- [ee0382e](../../commit/ee0382e) [fixed] Use .ownerDocument instead of root document
+- [182344a](../../commit/182344a) [changed] Updated express dev-dependency
+- [6edadbd](../../commit/6edadbd) [changed] Updated mocha dev-dependency
+- [64ac86d](../../commit/64ac86d) [changed] React dependency from 0.13.0 -> 0.13.1
+- [367b870](../../commit/367b870) [changed] Updated karma-chai dev-dependency
+- [1956d2a](../../commit/1956d2a) [changed] Updated style-loader dev-dependency
+- [76c87bf](../../commit/76c87bf) [changed] Updated ESLint dev-dependency
+- [84b9113](../../commit/84b9113) [changed] Update Bootstrap to 3.3.4
+- [bfb3e6c](../../commit/bfb3e6c) [added] `standalone` prop to Input, which will not render the `form-group` class
+- [721aacc](../../commit/721aacc) [fixed] Documentation on react install
+- [6907e03](../../commit/6907e03) [changed] Renamed src/main.js -> src/index.js
+- [5118b42](../../commit/5118b42) [added] Test for carousel control behaviour with wrap=true
+- [ea479db](../../commit/ea479db) [fixed] show carousel controls if wrap is enabled
+
+
+v0.19.1 - Thu, 26 Mar 2015 19:37:01 GMT
+---------------------------------------
+
+- [2b7d235](../../commit/2b7d235) [fixed] Re-added CollapsableNav to public API
+
+
+v0.19.0 - Wed, 25 Mar 2015 21:25:57 GMT
+---------------------------------------
+
+- [98ee978](../../commit/98ee978) [changed] Source to ES6 using Babel and Webpack
+
+
+v0.18.0 - Tue, 24 Mar 2015 02:56:15 GMT
+---------------------------------------
+
+- [728c2b0](../../commit/728c2b0) [fixed] docs CodeMirror scroll height too big
+- [d282621](../../commit/d282621) [fixed] Split buttons with React 0.13
+- [549da6e](../../commit/549da6e) [added] react-router dependency for docs
+- [804c24a](../../commit/804c24a) [added] Support for React 0.13.x
+- [4c26075](../../commit/4c26075) [fixed] Build status badge
+- [70f8596](../../commit/70f8596) [added] Travis CI Optimization
+
+
+v0.17.0 - Tue, 17 Mar 2015 15:03:27 GMT
+---------------------------------------
+
+- [4fae871](../../commit/4fae871) [added] CollapsableNav implements bootstrap markup for navbar-collapse
+- [befed83](../../commit/befed83) [fixed] All panel-* classes dynamic based on bsStyle prop
+- [de6f7dd](../../commit/de6f7dd) [fixed] CollapsableMixin fixed size
+- [7cc4747](../../commit/7cc4747) [fixed] Added role="button" to NavItem for aria compliance.
+- [3b6ba7a](../../commit/3b6ba7a) [fixed] Col Offset/Pull/Push of zero. Fixes #406
+- [66c439f](../../commit/66c439f) [fixed] OverlayTrigger improvement related to #353 . Helps reduce browser reflows for lots of multiple OverlayTriggers being rendered at once. Before: http://i.imgur.com/e4UZ5l6.png , http://i.imgur.com/Tw39F9t.png After: http://i.imgur.com/bU0f7VY.png
+
+
+v0.16.1 - Tue, 03 Mar 2015 23:04:19 GMT
+---------------------------------------
+
+- [71ff264](../../commit/71ff264) [added] bsSize prop to Input, supporting input groups
+
+
+v0.16.0 - Fri, 27 Feb 2015 14:01:37 GMT
+---------------------------------------
+
+- [25b4143](../../commit/25b4143) [fixed] Define toggleNavKey in the propTypes
+- [1a4ae1d](../../commit/1a4ae1d) [fixed] Fix rendering Navbar header when toggleNavKey is 0
+- [13f395d](../../commit/13f395d) [added] bsStyle prop support for Modal to set the header color
+- [c822837](../../commit/c822837) [removed] non-standard onClick props for ListGroup and ListGroupItem
+- [1556e63](../../commit/1556e63) [added] Example for collapsable Navbar in docs.
+
+
+v0.15.1 - Tue, 17 Feb 2015 14:30:54 GMT
+---------------------------------------
+
+- [587a34f](../../commit/587a34f) [fixed] Include .npmignore so compile lib dir is published
+
+
+v0.15.0 - Mon, 16 Feb 2015 02:41:59 GMT
+---------------------------------------
+
+- [1ef51cb](../../commit/1ef51cb) [added] Changelog generation from commit messages
+- [13baeaa](../../commit/13baeaa) [added] Release task to push and tag docs and bower repos
+- [0193046](../../commit/0193046) [changed] Move built components to lib directory

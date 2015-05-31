@@ -1,7 +1,7 @@
 const React = require("react");
 const { Table, ButtonGroup, Button } = require("react-bootstrap");
 
-let AppComponent = React.createClass({
+let C3Index = React.createClass({
 	displayName: "AppComponent",
   render: function () {
     return (
@@ -10,9 +10,9 @@ let AppComponent = React.createClass({
 				<tbody>
 				</tbody>
 			</Table>
-			<h1>Hello world!!!!</h1>
+			<h1>C3Index</h1>
       </div>
     );
   }
 });
-module.exports = AppComponent;
+module.exports = C3Index;

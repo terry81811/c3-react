@@ -1,4 +1,6 @@
-const React = require("react");
+"use strict";
+
+const React = require("react/addons");
 const {
 	Button, ButtonToolbar,
 	MenuItem,
@@ -8,50 +10,23 @@ const {
 const d3 = require("d3");
 const nvd3 = require("nvd3");
 
+const Fluxxor = require("fluxxor");
+const FluxMixin = Fluxxor.FluxMixin(React),
+    StoreWatchMixin = Fluxxor.StoreWatchMixin;
+
+
 let Nvd3Index = React.createClass({
 	displayName: "AppComponent",
+  mixins: [FluxMixin, StoreWatchMixin("DataStore")],
 
   getInitialState: function() {
+    return {};
+  },
+
+  getStateFromFlux: function() {
+    let flux = this.getFlux();
     return {
-			data:[
-				{
-						key: "Cumulative Return",
-						values: [
-							{
-								"label" : "A Label",
-								"value" : -29.765957771107
-							},
-							{
-								"label" : "B Label",
-								"value" : 0
-							},
-							{
-								"label" : "C Label",
-								"value" : 32.807804682612
-							},
-							{
-								"label" : "D Label",
-								"value" : 196.45946739256
-							},
-							{
-								"label" : "E Label",
-								"value" : 0.19434030906893
-							},
-							{
-								"label" : "F Label",
-								"value" : -98.079782601442
-							},
-							{
-								"label" : "G Label",
-								"value" : -13.925743130903
-							},
-							{
-								"label" : "H Label",
-								"value" : -5.1387322875705
-							}
-						]
-					}
-				]
+      data: flux.store("DataStore").getState(),
     };
   },
 

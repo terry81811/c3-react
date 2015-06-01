@@ -7,6 +7,8 @@ require("./assets/stylesheet.css");
 const React = require("react");
 
 let Fluxxor = require("fluxxor");
+let FluxMixin = Fluxxor.FluxMixin(React),
+    StoreWatchMixin = Fluxxor.StoreWatchMixin;
 
 let Router = require("react-router");
 let { Route, DefaultRoute, RouteHandler } = Router;
@@ -43,6 +45,8 @@ flux.on("dispatch", function(type, payload) {
 
 let Index = React.createClass({
 	displayName: "Index",
+  mixins: [FluxMixin],
+
   render: function() {
     return (
       <div style={{height: "100%"}}>
@@ -76,7 +80,7 @@ let routes = (
 );
 
 Router.run(routes, function(Handler) {
-  React.render(<Handler />, document.getElementById("container"));
+  React.render(<Handler flux={flux} />, document.getElementById("container"));
 });
 
 

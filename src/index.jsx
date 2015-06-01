@@ -6,6 +6,7 @@ require("./assets/stylesheet.css");
 
 const React = require("react");
 
+let Fluxxor = require("fluxxor");
 
 let Router = require("react-router");
 let { Route, DefaultRoute, RouteHandler } = Router;
@@ -14,14 +15,34 @@ let { Navbar, Nav, NavItem,
 			MenuItem, DropdownButton
 } = require("react-bootstrap");
 
-
 const d3Index = require("./components/d3Index.jsx");
 const Nvd3Index = require("./components/Nvd3Index.jsx");
 const C3Index = require("./components/C3Index.jsx");
 const googleChartIndex = require("./components/googleChartIndex.jsx");
 
-let Index = React.createClass({
+// Initialize Fluxxor
+// Stores
+let DataStore = require("./stores/DataStore");
+let stores = {
+  DataStore: new DataStore()
+};
 
+// Actions
+let DataActions = require("./actions/DataActions");
+let actions = {
+  DataActions: DataActions
+};
+
+// Flux
+let flux = new Fluxxor.Flux(stores, actions);
+flux.on("dispatch", function(type, payload) {
+  if (console && console.log) {
+    console.log("[Dispatch]", type, payload);
+  }
+});
+
+let Index = React.createClass({
+	displayName: "Index",
   render: function() {
     return (
       <div style={{height: "100%"}}>

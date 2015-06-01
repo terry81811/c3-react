@@ -12,6 +12,8 @@
 
 4. callback functions (interactivity)
 
+5. implementation complexity
+
 ## How to run
 
 1. Run the dev server

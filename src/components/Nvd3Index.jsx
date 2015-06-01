@@ -1,5 +1,9 @@
 const React = require("react");
-const { Table, ButtonGroup, Button } = require("react-bootstrap");
+const {
+	Button, ButtonToolbar,
+	MenuItem,
+	SplitButton
+} = require("react-bootstrap");
 
 const d3 = require("d3");
 const nvd3 = require("nvd3");
@@ -71,7 +75,6 @@ let Nvd3Index = React.createClass({
 			.datum(data)
 			.call(chart);
 
-		nv.utils.windowResize(chart.update);
 		return chart;
 		});
 	},
@@ -128,7 +131,21 @@ let Nvd3Index = React.createClass({
     return (
 			<div>
 				<h1>Nvd3Index</h1>
-					<Button onClick={this.toggleData} >change</Button>
+				<ButtonToolbar>
+				<SplitButton title={"Type"}>
+					<MenuItem eventKey='1'>Bar</MenuItem>
+					<MenuItem eventKey='2'>Pie</MenuItem>
+					<MenuItem eventKey='3'>MultiBar</MenuItem>
+					<MenuItem eventKey='3'>Line+Bar</MenuItem>
+					<MenuItem eventKey='3'>Other</MenuItem>
+				</SplitButton>
+				<SplitButton title={"Data"}>
+					<MenuItem eventKey='1'>New Data</MenuItem>
+					<MenuItem eventKey='2'>Add Entry</MenuItem>
+					<MenuItem eventKey='3'>Remove Entry</MenuItem>
+					<MenuItem eventKey='3'>Remove Data</MenuItem>
+				</SplitButton>
+				</ButtonToolbar>
 				<div>
 					<svg ref="d3Svg" width="600" height="400"></svg>;
 				</div>

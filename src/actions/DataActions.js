@@ -10,3 +10,21 @@ DataActions.newData = function () {
 		DataActTypes.NEW_DATA, {}
 	);
 };
+
+DataActions.addEntry = function () {
+	this.dispatch(
+		DataActTypes.ADD_ENTRY, {}
+	);
+};
+
+DataActions.removeEntry = function () {
+	this.dispatch(
+		DataActTypes.REMOVE_ENTRY, {}
+	);
+};
+
+DataActions.removeData = function () {
+	this.dispatch(
+		DataActTypes.REMOVE_DATA, {}
+	);
+};

@@ -29,6 +29,9 @@ let DataStore = Fluxxor.createStore({
 
     this.bindActions(
       DataActTypes.NEW_DATA, this.onNewData,
+      DataActTypes.ADD_ENTRY, this.onAddEntry,
+      DataActTypes.REMOVE_ENTRY, this.onRemoveEntry,
+      DataActTypes.REMOVE_DATA, this.onRemoveData
       );
 	},
 
@@ -43,6 +46,41 @@ let DataStore = Fluxxor.createStore({
 		_data = [{
 			key: "1",
 			values: this.dataGenerator()
+		}];
+    this.emit(Const.CHANGE_EVENT);
+	},
+
+	onAddEntry: function() {
+		console.log("add entry");
+		let values = _data[0].values;
+		values.push({label: _charGenerator.charAt(values.length), value: Math.floor((Math.random() * 100) + 1)});
+		_data = [{
+			key: "1",
+			values: values
+		}];
+    this.emit(Const.CHANGE_EVENT);
+	},
+
+	onRemoveEntry: function() {
+		console.log("remove entry");
+		let values = _data[0].values;
+		console.log(values);
+		values.pop();
+//		values = values.splice(1,-1)
+		console.log(values);
+
+		_data = [{
+			key: "1",
+			values: values
+		}];
+    this.emit(Const.CHANGE_EVENT);
+	},
+
+	onRemoveData: function() {
+		console.log("remove data");
+		_data = [{
+			key: "1",
+			values: []
 		}];
     this.emit(Const.CHANGE_EVENT);
 

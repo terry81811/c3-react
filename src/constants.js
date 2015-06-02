@@ -19,6 +19,9 @@ module.exports = {
   ActTypes: {
     Data: scopedKeyMirror("DATA", {
       NEW_DATA: null,
+      ADD_ENTRY: null,
+      REMOVE_ENTRY: null,
+      REMOVE_DATA: null
     }),
   },
 

@@ -58,10 +58,23 @@ let Nvd3Index = React.createClass({
 
   componentDidUpdate: function () {
 		this.drawGraph();
+		console.log("1");
   },
 
   handleNewDataClick: function() {
     this.getFlux().actions.DataActions.newData();
+  },
+
+  handleAddEntryClick: function() {
+    this.getFlux().actions.DataActions.addEntry();
+  },
+
+  handleRemoveEntryClick: function() {
+    this.getFlux().actions.DataActions.removeEntry();
+  },
+
+  handleRemoveDataClick: function() {
+    this.getFlux().actions.DataActions.removeData();
   },
 
   render: function () {
@@ -78,9 +91,9 @@ let Nvd3Index = React.createClass({
 				</SplitButton>
 				<SplitButton title={"Data"}>
 					<MenuItem eventKey='1' onClick={this.handleNewDataClick}>New Data</MenuItem>
-					<MenuItem eventKey='2'>Add Entry</MenuItem>
-					<MenuItem eventKey='3'>Remove Entry</MenuItem>
-					<MenuItem eventKey='4'>Remove Data</MenuItem>
+					<MenuItem eventKey='2' onClick={this.handleAddEntryClick}>Add Entry</MenuItem>
+					<MenuItem eventKey='3' onClick={this.handleRemoveEntryClick}>Remove Entry</MenuItem>
+					<MenuItem eventKey='4' onClick={this.handleRemoveDataClick}>Remove Data</MenuItem>
 				</SplitButton>
 				</ButtonToolbar>
 				<div>

@@ -1,6 +1,8 @@
 "use strict";
 
 const Fluxxor = require("fluxxor");
+const Const = require("../constants");
+const DataActTypes = Const.ActTypes.Data;
 
 // Keeping these variables outside the PageStore makes them private.
 // We surely don"t want others use these variables directly -- this
@@ -24,6 +26,10 @@ let DataStore = Fluxxor.createStore({
 			values: this.dataGenerator()
 		}];
 		_type = "bar";
+
+    this.bindActions(
+      DataActTypes.NEW_DATA, this.onNewData,
+      );
 	},
 
 	getState: function() {
@@ -32,6 +38,15 @@ let DataStore = Fluxxor.createStore({
 			type: _type
 		};
 	},
+
+	onNewData: function() {
+		_data = [{
+			key: "1",
+			values: this.dataGenerator()
+		}];
+    this.emit(Const.CHANGE_EVENT);
+
+	}
 
 });
 module.exports = DataStore;

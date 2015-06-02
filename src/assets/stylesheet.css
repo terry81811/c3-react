@@ -9,6 +9,7 @@ html, body {
   padding-top: 60px;
 }
 
+/* for react-d3-components */
 .tooltip {
 	padding: 3px;
 	border: 2px solid;

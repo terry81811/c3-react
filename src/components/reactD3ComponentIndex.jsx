@@ -28,6 +28,11 @@ let reactD3ComponentIndex = React.createClass({
       DataStore: flux.store("DataStore").getState(),
     };
   },
+
+  handleNewDataClick: function() {
+    this.getFlux().actions.DataActions.newData();
+  },
+
   render: function () {
 		let tooltip = function(x, y0, y, total) {
 			return y.toString();
@@ -56,7 +61,7 @@ let reactD3ComponentIndex = React.createClass({
 					<MenuItem eventKey='5'>Other</MenuItem>
 				</SplitButton>
 				<SplitButton title={"Data"}>
-					<MenuItem eventKey='1'>New Data</MenuItem>
+					<MenuItem eventKey='1' onClick={this.handleNewDataClick}>New Data</MenuItem>
 					<MenuItem eventKey='2'>Add Entry</MenuItem>
 					<MenuItem eventKey='3'>Remove Entry</MenuItem>
 					<MenuItem eventKey='4'>Remove Data</MenuItem>

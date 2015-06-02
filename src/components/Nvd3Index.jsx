@@ -60,8 +60,8 @@ let Nvd3Index = React.createClass({
 		this.drawGraph();
   },
 
-  toggleData: function () {
-//		this.setState({data: data});
+  handleNewDataClick: function() {
+    this.getFlux().actions.DataActions.newData();
   },
 
   render: function () {
@@ -77,7 +77,7 @@ let Nvd3Index = React.createClass({
 					<MenuItem eventKey='5'>Other</MenuItem>
 				</SplitButton>
 				<SplitButton title={"Data"}>
-					<MenuItem eventKey='1'>New Data</MenuItem>
+					<MenuItem eventKey='1' onClick={this.handleNewDataClick}>New Data</MenuItem>
 					<MenuItem eventKey='2'>Add Entry</MenuItem>
 					<MenuItem eventKey='3'>Remove Entry</MenuItem>
 					<MenuItem eventKey='4'>Remove Data</MenuItem>

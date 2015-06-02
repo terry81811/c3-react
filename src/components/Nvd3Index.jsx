@@ -26,15 +26,13 @@ let Nvd3Index = React.createClass({
   getStateFromFlux: function() {
     let flux = this.getFlux();
     return {
-      data: flux.store("DataStore").getState(),
+      DataStore: flux.store("DataStore").getState(),
     };
   },
 
 
 	drawGraph: function() {
-		let data = this.state.data;
-//		console.log(data);
-		console.log(this.state);
+		let data = this.state.DataStore.data;
 
 		nv.addGraph(function() {
 		let chart = nv.models.discreteBarChart()
@@ -63,46 +61,10 @@ let Nvd3Index = React.createClass({
   },
 
   toggleData: function () {
-		let data = [
-				{
-						key: "Cumulative Return",
-						values: [
-							{
-								"label" : "A Label",
-								"value" : -12.765957771107
-							},
-							{
-								"label" : "B Label",
-								"value" : 0
-							},
-							{
-								"label" : "C Label",
-								"value" : 32.807804682612
-							},
-							{
-								"label" : "D Label",
-								"value" : 196.45946739256
-							},
-							{
-								"label" : "E Label",
-								"value" : 0.19434030906893
-							},
-							{
-								"label" : "F Label",
-								"value" : -98.079782601442
-							},
-							{
-								"label" : "G Label",
-								"value" : -13.925743130903
-							}
-						]
-					}
-				];
-		this.setState({data: data});
+//		this.setState({data: data});
   },
 
   render: function () {
-		console.log(this.state);
     return (
 			<div>
 				<h1>Nvd3Index</h1>
@@ -111,18 +73,18 @@ let Nvd3Index = React.createClass({
 					<MenuItem eventKey='1'>Bar</MenuItem>
 					<MenuItem eventKey='2'>Pie</MenuItem>
 					<MenuItem eventKey='3'>MultiBar</MenuItem>
-					<MenuItem eventKey='3'>Line+Bar</MenuItem>
-					<MenuItem eventKey='3'>Other</MenuItem>
+					<MenuItem eventKey='4'>Line+Bar</MenuItem>
+					<MenuItem eventKey='5'>Other</MenuItem>
 				</SplitButton>
 				<SplitButton title={"Data"}>
 					<MenuItem eventKey='1'>New Data</MenuItem>
 					<MenuItem eventKey='2'>Add Entry</MenuItem>
 					<MenuItem eventKey='3'>Remove Entry</MenuItem>
-					<MenuItem eventKey='3'>Remove Data</MenuItem>
+					<MenuItem eventKey='4'>Remove Data</MenuItem>
 				</SplitButton>
 				</ButtonToolbar>
 				<div>
-					<svg ref="d3Svg" width="600" height="400"></svg>;
+					<svg ref="d3Svg" width="600" height="400"></svg>
 				</div>
       </div>
     );

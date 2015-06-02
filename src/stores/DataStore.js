@@ -15,15 +15,14 @@ let DataStore = Fluxxor.createStore({
 		for(let i = 0; i < 10; i++){
 			data.push({label: _charGenerator.charAt(i), value: Math.floor((Math.random() * 100) + 1)});
 		}
-		console.log(data);
 		return data;
 	},
 
 	initialize: function() {
-		_data = {
+		_data = [{
 			key: null,
 			values: this.dataGenerator()
-		};
+		}];
 		_type = "bar";
 	},
 

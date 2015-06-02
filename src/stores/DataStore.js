@@ -20,7 +20,7 @@ let DataStore = Fluxxor.createStore({
 
 	initialize: function() {
 		_data = [{
-			key: null,
+			key: "1",
 			values: this.dataGenerator()
 		}];
 		_type = "bar";

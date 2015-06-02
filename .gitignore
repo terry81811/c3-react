@@ -12,10 +12,6 @@
 .DS_Store
 
 # Ignore npm related files
-doorgod/node_modules
-doorgod/.npm-debug.log
-doorgod/npm-debug.log
-
-# Ignore webpack generated files
-doorgod/build/*.svg
-doorgod/build/*.bundle.js
+node_modules
+.npm-debug.log
+npm-debug.log

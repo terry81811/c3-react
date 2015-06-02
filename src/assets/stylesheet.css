@@ -8,3 +8,13 @@ html, body {
   position: relative;
   padding-top: 60px;
 }
+
+.tooltip {
+	padding: 3px;
+	border: 2px solid;
+	border-radius: 4px;
+	background-color: #eee;
+	opacity: 0.6;
+	justify-content: center;
+	align-items: center;
+}

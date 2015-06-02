@@ -16,7 +16,7 @@ const FluxMixin = Fluxxor.FluxMixin(React),
 
 
 let Nvd3Index = React.createClass({
-	displayName: "AppComponent",
+	displayName: "Nvd3Component",
   mixins: [FluxMixin, StoreWatchMixin("DataStore")],
 
   getInitialState: function() {

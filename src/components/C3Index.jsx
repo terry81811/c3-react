@@ -26,16 +26,7 @@ let C3Index = React.createClass({
     };
   },
 
-  dataPreparator: function(data) {
-		let x = ["x"];
-		let values = [data[0].key];
-		data[0].values.map(function(d){
-			x.push(d.label);
-			values.push(d.value);
-		});
-		return [x, values];
-  },
-
+//c3.js 
 	drawGraph: function() {
 		let colorScale = d3.scale.category20();
 		let chart = c3.generate({
@@ -97,16 +88,20 @@ let C3Index = React.createClass({
     this.getFlux().actions.DataActions.removeData();
   },
 
+  handleChartTypeChange: function(type) {
+    this.getFlux().actions.DataActions.changeChartType(type);
+  },
+
   render: function () {
     return (
 			<div>
 				<h1>C3Index</h1>
 				<ButtonToolbar>
 				<SplitButton title={"Type"}>
-					<MenuItem eventKey='1'>Bar</MenuItem>
-					<MenuItem eventKey='2'>Pie</MenuItem>
-					<MenuItem eventKey='3'>MultiBar</MenuItem>
-					<MenuItem eventKey='4'>Line+Bar</MenuItem>
+					<MenuItem eventKey='1' onClick={this.handleChartTypeChange.bind(null, "bar")}>Bar</MenuItem>
+					<MenuItem eventKey='2' onClick={this.handleChartTypeChange.bind(null, "pie")}>Pie</MenuItem>
+					<MenuItem eventKey='3' onClick={this.handleChartTypeChange.bind(null, "multiBar")}>MultiBar</MenuItem>
+					<MenuItem eventKey='4' onClick={this.handleChartTypeChange.bind(null, "lineBar")}>Line+Bar</MenuItem>
 					<MenuItem eventKey='5'>Other</MenuItem>
 				</SplitButton>
 				<SplitButton title={"Data"}>

@@ -21,7 +21,8 @@ module.exports = {
       NEW_DATA: null,
       ADD_ENTRY: null,
       REMOVE_ENTRY: null,
-      REMOVE_DATA: null
+      REMOVE_DATA: null,
+      CHANGE_CHART_TYPE: null
     }),
   },
 

@@ -31,7 +31,8 @@ let DataStore = Fluxxor.createStore({
       DataActTypes.NEW_DATA, this.onNewData,
       DataActTypes.ADD_ENTRY, this.onAddEntry,
       DataActTypes.REMOVE_ENTRY, this.onRemoveEntry,
-      DataActTypes.REMOVE_DATA, this.onRemoveData
+      DataActTypes.REMOVE_DATA, this.onRemoveData,
+      DataActTypes.CHANGE_CHART_TYPE, this.onChangeChartType
       );
 	},
 
@@ -64,10 +65,7 @@ let DataStore = Fluxxor.createStore({
 	onRemoveEntry: function() {
 		console.log("remove entry");
 		let values = _data[0].values;
-		console.log(values);
 		values.pop();
-//		values = values.splice(1,-1)
-		console.log(values);
 
 		_data = [{
 			key: "dataSource",
@@ -83,7 +81,11 @@ let DataStore = Fluxxor.createStore({
 			values: []
 		}];
     this.emit(Const.CHANGE_EVENT);
+	},
 
+	onChangeChartType: function(payload) {
+		console.log(payload);
+		_type = payload.type;
 	}
 
 });

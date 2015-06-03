@@ -28,3 +28,10 @@ DataActions.removeData = function () {
 		DataActTypes.REMOVE_DATA, {}
 	);
 };
+
+DataActions.changeChartType = function (type) {
+	this.dispatch(
+		DataActTypes.CHANGE_CHART_TYPE,
+		{type: type}
+	);
+};

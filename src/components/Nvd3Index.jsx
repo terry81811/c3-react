@@ -2,7 +2,7 @@
 
 const React = require("react/addons");
 const {
-	Button, ButtonToolbar,
+	ButtonToolbar,
 	MenuItem,
 	SplitButton
 } = require("react-bootstrap");
@@ -58,7 +58,6 @@ let Nvd3Index = React.createClass({
 
   componentDidUpdate: function () {
 		this.drawGraph();
-		console.log("1");
   },
 
   handleNewDataClick: function() {

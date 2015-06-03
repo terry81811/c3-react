@@ -2,7 +2,8 @@
 
 require("bootstrap/dist/css/bootstrap.css");
 require("./assets/stylesheet.css");
-
+//c3.js
+require("c3/c3.css");
 
 const React = require("react");
 

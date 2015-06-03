@@ -1,6 +1,6 @@
 const React = require("react");
 const {
-	Button, ButtonToolbar,
+	ButtonToolbar,
 	MenuItem,
 	SplitButton
 } = require("react-bootstrap");
@@ -46,36 +46,35 @@ let reactD3ComponentIndex = React.createClass({
   },
 
   renderGraph: function () {
-  	console.log(this.state);
-  	if(this.state.DataStore.data[0].values.length === 0){
-  		return <h4>No Data Available!</h4>;
-  	}else{
+		if(this.state.DataStore.data[0].values.length === 0){
+			return <h4>No Data Available!</h4>;
+		}else{
 			let tooltip = function(x, y0, y, total) {
 				return y.toString();
 			};
-	  	let BarChart = ReactD3.BarChart;
+			let BarChart = ReactD3.BarChart;
 
 			let labelAccessor = function(stack) { return stack.key; };
 			let valuesAccessor = function(stack) { return stack.values; };
 			let xAccessor = function(element) { return element.label; };
 			let yAccessor = function(element) { return element.value; };
 			let colorScale = d3.scale.category20();
-			
-  		return (
+
+			return (
 				<BarChart
-				   data={this.state.DataStore.data}
-				   width={400}
-				   height={400}
-				   margin={{top: 10, bottom: 50, left: 50, right: 10}}
-				   tooltipHtml={tooltip}
-				   label={labelAccessor}
-				   x={xAccessor}
-				   y={yAccessor}
-				   values={valuesAccessor}
-				   colorScale={colorScale}
-				   />
+					data={this.state.DataStore.data}
+					width={400}
+					height={400}
+					margin={{top: 10, bottom: 50, left: 50, right: 10}}
+					tooltipHtml={tooltip}
+					label={labelAccessor}
+					x={xAccessor}
+					y={yAccessor}
+					values={valuesAccessor}
+					colorScale={colorScale}
+				/>
 			);
-  	}
+		}
   },
 
   render: function () {

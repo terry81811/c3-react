@@ -41,11 +41,14 @@ let C3Index = React.createClass({
 		let chart = c3.generate({
 			bindto: "#chart",
 			data: {
-        x : "x",
-        columns: this.dataPreparator(this.state.DataStore.data),
-        groups: [
-            ["data1"]
-        ],
+				json: this.state.DataStore.data[0].values,
+				keys: {
+					x: "label",
+					value: ["value"]
+				},
+        names: {
+            value: this.state.DataStore.data[0].key
+        },
         type: "bar",
         color: function (color, d) {
             return colorScale(d.index);

@@ -22,7 +22,7 @@ let DataStore = Fluxxor.createStore({
 
 	initialize: function() {
 		_data = [{
-			key: "1",
+			key: "dataSource",
 			values: this.dataGenerator()
 		}];
 		_type = "bar";
@@ -44,7 +44,7 @@ let DataStore = Fluxxor.createStore({
 
 	onNewData: function() {
 		_data = [{
-			key: "1",
+			key: "dataSource",
 			values: this.dataGenerator()
 		}];
     this.emit(Const.CHANGE_EVENT);
@@ -55,7 +55,7 @@ let DataStore = Fluxxor.createStore({
 		let values = _data[0].values;
 		values.push({label: _charGenerator.charAt(values.length), value: Math.floor((Math.random() * 100) + 1)});
 		_data = [{
-			key: "1",
+			key: "dataSource",
 			values: values
 		}];
     this.emit(Const.CHANGE_EVENT);
@@ -70,7 +70,7 @@ let DataStore = Fluxxor.createStore({
 		console.log(values);
 
 		_data = [{
-			key: "1",
+			key: "dataSource",
 			values: values
 		}];
     this.emit(Const.CHANGE_EVENT);
@@ -79,7 +79,7 @@ let DataStore = Fluxxor.createStore({
 	onRemoveData: function() {
 		console.log("remove data");
 		_data = [{
-			key: "1",
+			key: "dataSource",
 			values: []
 		}];
     this.emit(Const.CHANGE_EVENT);

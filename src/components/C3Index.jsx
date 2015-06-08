@@ -47,6 +47,18 @@ let C3Index = React.createClass({
   },
 
   render: function () {
+		let options = {
+			padding: {
+				top: 20,
+				bottom: 20,
+				left: 10,
+				right: 10
+			},
+			size: {
+				width: 800,
+				height: 600
+			}
+		};
     return (
 			<div>
 				<h1>C3Index</h1>
@@ -67,8 +79,8 @@ let C3Index = React.createClass({
 					<MenuItem eventKey='4' onClick={this.handleRemoveDataClick}>Remove Data</MenuItem>
 				</SplitButton>
 				</ButtonToolbar>
-				<div id="chart2" style={{width: 600, height: 400}}>
-					<C3Chart padding={{}} data={this.state.DataStore.data} type={this.state.DataStore.type}/>
+				<div id="chart">
+					<C3Chart data={this.state.DataStore.data} type={this.state.DataStore.type} options={options}/>
 				</div>
       </div>
     );

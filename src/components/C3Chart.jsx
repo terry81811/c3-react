@@ -26,7 +26,11 @@ let C3Chart = React.createClass({
 				y: React.PropTypes.string
 			}),
 			subchart: React.PropTypes.bool,
-			zoom: React.PropTypes.bool
+			zoom: React.PropTypes.bool,
+			grid: React.PropTypes.shape({
+				x: React.PropTypes.bool,
+				y: React.PropTypes.bool
+			})
 		})
   },
 
@@ -46,6 +50,39 @@ let C3Chart = React.createClass({
 				pattern: this.colors(20)
 			}
 		};
+		let options = this.props.options;
+		if(options.padding){
+			graphObject.padding = {
+				top: options.padding.top,
+				left: options.padding.left,
+				right: options.padding.right,
+				bottom: options.padding.bottom
+			};
+		}
+		if(options.size){
+			graphObject.size = {
+				width: options.size.width,
+				height: options.size.height
+			};
+		}
+		if(options.onclick){
+
+		}
+		if(options.axisLabel){
+
+		}
+		if(options.subchart){
+			graphObject.subchart = {show: options.subchart};
+		}
+		if(options.zoom){
+			graphObject.zoom = {enable: options.zoom};
+		}
+		if(options.grid){
+			graphObject.grid = {
+				x:{show: options.grid.x},
+				y:{show: options.grid.y}
+			};
+		}
 		return graphObject;
   },
 
@@ -131,6 +168,10 @@ let C3Chart = React.createClass({
 			columns: this.pieChartDataPreparator(this.props.data[0].values),
 			type : "pie"
 		};
+		graphObject.axis = {
+			x: { type: "category" } // this needed to load string x value
+		};
+
 		let chart = c3.generate(graphObject);
 		return chart;
 	},

@@ -1,5 +1,6 @@
 "use strict";
 
+const _ = require("lodash");
 const Fluxxor = require("fluxxor");
 const Const = require("../constants");
 const DataActTypes = Const.ActTypes.Data;
@@ -9,7 +10,7 @@ const DataActTypes = Const.ActTypes.Data;
 // makes sure we have proper consistency.
 let _data;
 let _type;
-let _charGenerator = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+let _charGenerator = " ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 
 let DataStore = Fluxxor.createStore({
 	dataGenerator: function() {
@@ -22,7 +23,11 @@ let DataStore = Fluxxor.createStore({
 
 	initialize: function() {
 		_data = [{
-			key: "dataSource",
+			key: "dataSource1",
+			values: this.dataGenerator()
+		},
+		{
+			key: "dataSource2",
 			values: this.dataGenerator()
 		}];
 		_type = "bar";
@@ -44,40 +49,36 @@ let DataStore = Fluxxor.createStore({
 	},
 
 	onNewData: function() {
-		_data = [{
-			key: "dataSource",
-			values: this.dataGenerator()
-		}];
+		_.map(_data, (d) => {
+			d.values = this.dataGenerator();
+		});
     this.emit(Const.CHANGE_EVENT);
 	},
 
 	onAddEntry: function() {
 		console.log("add entry");
-		let values = _data[0].values;
-		values.push({label: _charGenerator.charAt(values.length), value: Math.floor((Math.random() * 100) + 1)});
-		_data = [{
-			key: "dataSource",
-			values: values
-		}];
+		_.map(_data, (d) => {
+			d.values.push({label: _charGenerator.charAt(d.values.length), value: Math.floor((Math.random() * 100) + 1)});
+		});
     this.emit(Const.CHANGE_EVENT);
 	},
 
 	onRemoveEntry: function() {
 		console.log("remove entry");
-		let values = _data[0].values;
-		values.pop();
-
-		_data = [{
-			key: "dataSource",
-			values: values
-		}];
+		_.map(_data, (d) => {
+			d.values.pop();
+		});
     this.emit(Const.CHANGE_EVENT);
 	},
 
 	onRemoveData: function() {
 		console.log("remove data");
 		_data = [{
-			key: "dataSource",
+			key: "dataSource1",
+			values: []
+		},
+		{
+			key: "dataSource2",
 			values: []
 		}];
     this.emit(Const.CHANGE_EVENT);
@@ -86,6 +87,7 @@ let DataStore = Fluxxor.createStore({
 	onChangeChartType: function(payload) {
 		console.log(payload);
 		_type = payload.type;
+    this.emit(Const.CHANGE_EVENT);
 	}
 
 });

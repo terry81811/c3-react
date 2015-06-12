@@ -1,4 +1,4 @@
-# react-d3-comparison
+# c3-react
 
 ## Purpose
 
@@ -14,10 +14,34 @@
 
 5. implementation complexity
 
-## How to run
-
-1. Run the dev server
+## How to install
 
   ```
-  npm run dev
+  npm install c3-react
   ```
+
+## How to use
+
+  ```
+  const C3Chart = require("./C3Chart.jsx");
+  ```
+  
+* In parnet component
+  ```
+  <C3Chart data={data} type={type} options={options}/>
+  ```
+
+## How to run examples
+
+  ```
+  $ cd c3-react
+  $ npm install 
+  $ npm run dev
+  ```
+
+## Dependency
++ [C3.js](https://github.com/masayuki0812/c3) `<=0.4.10`
++ [D3.js](https://github.com/mbostock/d3) `<=3.5.0`
+
+## License
+MIT

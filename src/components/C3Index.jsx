@@ -77,8 +77,7 @@ let C3Index = React.createClass({
 		};
     return (
 			<div>
-				<h1>C3Index</h1>
-				<h3>{this.state.DataStore.type}</h3>
+				<h1>C3-React-Component</h1>
 				<ButtonToolbar>
 				<SplitButton title={"Type"}>
 					<MenuItem eventKey='1' onClick={this.handleChartTypeChange.bind(null, "line")}>Line</MenuItem>

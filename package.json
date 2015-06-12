@@ -1,7 +1,7 @@
 {
-  "name": "my-project",
-  "version": "0.0.0",
-  "author": "",
+  "name": "c3-react",
+  "version": "0.0.1",
+  "author": "Ming-Hsun Tsai",
   "license": "ISC",
   "main": "app/main.js",
   "scripts": {
@@ -18,10 +18,8 @@
     "fluxxor": "^1.5.4",
     "jsx-loader": "^0.13.2",
     "lodash": "^3.9.3",
-    "nvd3": "^1.1.15-beta2",
     "react": "^0.13.1",
     "react-bootstrap": "^0.23.0",
-    "react-d3-components": "^0.4.8",
     "react-hot-loader": "^1.2.7",
     "react-router": "^0.13.3",
     "style-loader": "^0.12.3",

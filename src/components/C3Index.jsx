@@ -47,16 +47,32 @@ let C3Index = React.createClass({
   },
 
   render: function () {
+		//sample options
 		let options = {
 			padding: {
 				top: 20,
 				bottom: 20,
-				left: 10,
+				left: 40,
 				right: 10
 			},
 			size: {
-				width: 800,
-				height: 600
+				width: 600,
+				height: 400
+			},
+			subchart: true,
+			zoom: true,
+			grid: {
+				y: true
+			},
+			labels: true,
+			axisLabel: {
+				x: "x軸",
+				y: "y軸"
+			},
+			onClick: function(d) {
+				let categories = this.categories();
+				console.log(d);
+				console.log("you clicked {" + d.name + ": " + categories[d.x] + ": " + d.value + "}");
 			}
 		};
     return (

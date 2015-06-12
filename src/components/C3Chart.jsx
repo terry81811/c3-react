@@ -20,6 +20,7 @@ let C3Chart = React.createClass({
 				width: React.PropTypes.number,
 				height: React.PropTypes.number,
 			}),
+			labels: React.PropTypes.bool,
 			onclick: React.PropTypes.func,
 			axisLabel: React.PropTypes.shape({
 				x: React.PropTypes.string,
@@ -34,6 +35,7 @@ let C3Chart = React.createClass({
 		})
   },
 
+//color theme
 	colors: function(count) {
 		let colors = [];
 		let color = d3.scale.category10();
@@ -43,8 +45,11 @@ let C3Chart = React.createClass({
 		return colors;
 	},
 
+//apply props.options to graph json
   graphObject: function() {
 		let graphObject = {
+			data: {},
+			axis: {},
 			bindto: "#chartContainer",
 			color: {
 				pattern: this.colors(20)
@@ -65,17 +70,21 @@ let C3Chart = React.createClass({
 				height: options.size.height
 			};
 		}
-		if(options.onclick){
-
+		if(options.labels){
+			graphObject.data.labels = options.labels;
+		}
+		if(options.onClick){
+			graphObject.data.onclick = options.onClick;
 		}
 		if(options.axisLabel){
-
+			graphObject.axis.x = {label: options.axisLabel.x};
+			graphObject.axis.y = {label: options.axisLabel.y};
 		}
 		if(options.subchart){
 			graphObject.subchart = {show: options.subchart};
 		}
 		if(options.zoom){
-			graphObject.zoom = {enable: options.zoom};
+			graphObject.zoom = {enabled: options.zoom};
 		}
 		if(options.grid){
 			graphObject.grid = {
@@ -110,20 +119,17 @@ let C3Chart = React.createClass({
 	drawGraphLine: function() {
 		console.log("drawing line");
 		let graphObject = this.graphObject();
-		graphObject.data = {
-				json: this.props.data[0].values,
-				keys: {
-					x: "label",
-					value: ["value"]
-				},
-        names: { value: this.props.data[0].key },
-				onclick: function (d, element) {
-					console.log(d);
-				}
-			};
-		graphObject.axis = {
+		let graphObjectData = {
+			json: this.props.data[0].values,
+			keys: { x: "label", value: ["value"] },
+      names: { value: this.props.data[0].key }
+		};
+		let graphObjectAxis = {
 			x: { type: "category" } // this needed to load string x value
 		};
+
+		graphObject.data = _.merge(graphObjectData, graphObject.data);
+		graphObject.axis = _.merge(graphObjectAxis, graphObject.axis);
 
 		let chart = c3.generate(graphObject);
 		return chart;
@@ -132,22 +138,20 @@ let C3Chart = React.createClass({
 	drawGraphBar: function() {
 		console.log("drawing bar");
 		let graphObject = this.graphObject();
-		graphObject.data = {
-				json: this.props.data[0].values,
-				keys: {
-					x: "label",
-					value: ["value"]
-				},
-        names: { value: this.props.data[0].key },
-        type: "bar",
-        labels: true,
-				onclick: function (d, element) {
-					console.log(d);
-				},
-			};
-		graphObject.axis = {
+		let graphObjectData = {
+			x: "x",
+			json: this.props.data[0].values,
+			keys: { x: "label", value: ["value"] },
+      names: { value: this.props.data[0].key },
+      type: "bar",
+      labels: true
+		};
+		let graphObjectAxis = {
 			x: { type: "category" } // this needed to load string x value
 		};
+
+		graphObject.data = _.merge(graphObjectData, graphObject.data);
+		graphObject.axis = _.merge(graphObjectAxis, graphObject.axis);
 
 		let chart = c3.generate(graphObject);
 		return chart;
@@ -164,13 +168,12 @@ let C3Chart = React.createClass({
 	drawGraphPie: function() {
 		console.log("drawing pie");
 		let graphObject = this.graphObject();
-		graphObject.data = {
+		let graphObjectData = {
 			columns: this.pieChartDataPreparator(this.props.data[0].values),
 			type : "pie"
 		};
-		graphObject.axis = {
-			x: { type: "category" } // this needed to load string x value
-		};
+
+		graphObject.data = _.merge(graphObjectData, graphObject.data);
 
 		let chart = c3.generate(graphObject);
 		return chart;
@@ -197,19 +200,18 @@ let C3Chart = React.createClass({
 	drawGraphMultiBar: function() {
 		console.log("drawing multiBar");
 		let graphObject = this.graphObject();
-		graphObject.data = {
+		let graphObjectData = {
 			x: "x",
 			columns: this.multiDmsDataPreparator(this.props.data),
 			type: "bar",
       labels: true,
-			onclick: function (d, element) {
-				console.log(d);
-			}
-
 		};
-		graphObject.axis = {
+		let graphObjectAxis = {
 			x: { type: "category" } // this needed to load string x value
 		};
+
+		graphObject.data = _.merge(graphObjectData, graphObject.data);
+		graphObject.axis = _.merge(graphObjectAxis, graphObject.axis);
 
 		let chart = c3.generate(graphObject);
 		return chart;
@@ -218,30 +220,27 @@ let C3Chart = React.createClass({
 	drawGraphlLineBar: function() {
 		console.log("drawing LineBar");
 		let graphObject = this.graphObject();
-		graphObject.data = {
+		let graphObjectData = {
 			x: "x",
-        labels: true,
 			columns: this.multiDmsDataPreparator(this.props.data),
 			types: {dataSource1: "bar"},
-			onclick: function (d, element) {
-				console.log(d);
-			}
 		};
-		graphObject.axis = {
+		let graphObjectAxis = {
 			x: { type: "category" } // this needed to load string x value
 		};
+
+		graphObject.data = _.merge(graphObjectData, graphObject.data);
+		graphObject.axis = _.merge(graphObjectAxis, graphObject.axis);
 
 		let chart = c3.generate(graphObject);
 		return chart;
 	},
 
   componentDidMount: function() {
-//		console.log("didMount");
 		this.drawGraph();
   },
 
   componentDidUpdate: function () {
-//		console.log("didUpdate");
 		this.drawGraph();
   },
 

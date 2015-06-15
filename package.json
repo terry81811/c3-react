@@ -1,8 +1,8 @@
 {
   "name": "c3-react",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "author": "Ming-Hsun Tsai",
-  "license": "ISC",
+  "license": "MIT",
   "main": "app/main.js",
   "scripts": {
     "dev": "webpack-dev-server --port 3002 --devtool eval --progress --hot --colors --content-base build"

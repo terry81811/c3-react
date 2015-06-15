@@ -1,7 +1,5 @@
 # c3-react
 
-## 
-
 c3-react is a reusable react component for [c3](https://github.com/masayuki0812/c3) charts
 
 ## How to install

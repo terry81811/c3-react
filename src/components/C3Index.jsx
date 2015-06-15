@@ -56,8 +56,8 @@ let C3Index = React.createClass({
 				right: 10
 			},
 			size: {
-				width: 600,
-				height: 400
+				width: 800,
+				height: 600
 			},
 			subchart: true,
 			zoom: true,

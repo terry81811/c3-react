@@ -95,7 +95,9 @@ let C3Index = React.createClass({
 				</SplitButton>
 				</ButtonToolbar>
 				<div id="chart">
-					<C3Chart data={this.state.DataStore.data} type={this.state.DataStore.type} options={options}/>
+					<C3Chart  data={this.state.DataStore.data}
+                    type={this.state.DataStore.type}
+                    options={options}/>
 				</div>
       </div>
     );

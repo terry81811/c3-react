@@ -1,18 +1,8 @@
 # c3-react
 
-## Purpose
+## 
 
-* to compare reusable d3 libraries in react/flux architect based on the following perspectives
-
-1. supported graph types
-
-2. data-binding methods
-
-3. data/component lifecycles
-
-4. callback functions (interactivity)
-
-5. implementation complexity
+c3-react is a reusable react component for [c3](https://github.com/masayuki0812/c3) charts
 
 ## How to install
 

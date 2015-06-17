@@ -131,7 +131,7 @@
 	            { eventKey: 2, title: "documents" },
 	            React.createElement(
 	              MenuItem,
-	              { eventKey: "1", href: "#/" },
+	              { eventKey: "1", href: "#/doc" },
 	              "documents"
 	            ),
 	            React.createElement(
@@ -155,7 +155,8 @@
 	  Route,
 	  { name: "index", path: "/", handler: Index },
 	  React.createElement(Route, { name: "c3", path: "/c3", handler: C3Index }),
-	  React.createElement(DefaultRoute, { handler: DocIndex })
+	  React.createElement(Route, { name: "doc", path: "/doc", handler: DocIndex }),
+	  React.createElement(DefaultRoute, { handler: C3Index })
 	);
 
 	Router.run(routes, function (Handler) {
@@ -36488,8 +36489,8 @@
 					right: 10
 				},
 				size: {
-					width: 800,
-					height: 600
+					width: 640,
+					height: 480
 				},
 				subchart: true,
 				zoom: true,
@@ -36514,6 +36515,11 @@
 					"h1",
 					null,
 					"C3-React-Component"
+				),
+				React.createElement(
+					"h3",
+					null,
+					this.state.DataStore.type
 				),
 				React.createElement(
 					ButtonToolbar,
@@ -36849,12 +36855,6 @@
 			return React.createElement(
 				"div",
 				null,
-				React.createElement(
-					"h3",
-					null,
-					"graph type: ",
-					this.props.type
-				),
 				React.createElement("div", { id: "chartContainer" })
 			);
 		}
@@ -75136,7 +75136,17 @@
 	      React.createElement(
 	        "h1",
 	        null,
-	        "DocIndex"
+	        "Documentations"
+	      ),
+	      React.createElement(
+	        "p",
+	        null,
+	        "will be available soon. For now, please check ",
+	        React.createElement(
+	          "a",
+	          { href: "https://github.com/terry81811/c3-react" },
+	          "source"
+	        )
 	      )
 	    );
 	  }

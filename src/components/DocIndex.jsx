@@ -5,7 +5,7 @@ let DocIndex = React.createClass({
     //sample options
     return (
       <div>
-        <h1>DocIndex</h1>
+        <h1>Documentations</h1>
       </div>
     );
   }

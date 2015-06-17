@@ -53,7 +53,7 @@ let Index = React.createClass({
           <Nav>
             <NavItem key={1} eventKey={1} href="#/c3"> demo </NavItem>
 							<DropdownButton eventKey={2} title='documents'>
-                <MenuItem eventKey='1' href="#/">documents</MenuItem>
+                <MenuItem eventKey='1' href="#/doc">documents</MenuItem>
 								<MenuItem eventKey='2' href="https://github.com/terry81811/c3-react">Github Page</MenuItem>
 							</DropdownButton>
           </Nav>
@@ -69,7 +69,8 @@ let Index = React.createClass({
 let routes = (
   <Route name="index" path="/" handler={Index}>
     <Route name="c3" path="/c3" handler={C3Index}/>
-    <DefaultRoute handler={DocIndex}/>
+    <Route name="doc" path="/doc" handler={DocIndex}/>
+    <DefaultRoute handler={C3Index}/>
   </Route>
 );
 

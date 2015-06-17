@@ -1,9 +1,22 @@
 {
   "name": "c3-react",
-  "version": "0.1.0",
+  "version": "0.1.2",
   "author": "Ming-Hsun Tsai",
   "license": "MIT",
   "main": "app/main.js",
+  "keywords": [
+    "react",
+    "component",
+    "c3",
+    "d3",
+    "chart",
+    "graph"
+  ],
+  "repository" : {
+    "type" : "git",
+    "url" : "https://github.com/terry81811/c3-react"
+  },
+  "readmeFilename": "README.md",
   "scripts": {
     "dev": "webpack-dev-server --port 3002 --devtool eval --progress --hot --colors --content-base build"
   },

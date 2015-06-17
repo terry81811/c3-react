@@ -1,9 +1,9 @@
 {
   "name": "c3-react",
-  "version": "0.1.3",
+  "version": "0.1.5",
   "author": "Ming-Hsun Tsai",
   "license": "MIT",
-  "main": "app/main.js",
+  "main": "build/bundld.js",
   "keywords": [
     "react",
     "component",

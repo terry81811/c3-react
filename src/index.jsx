@@ -1,9 +1,8 @@
 "use strict";
 
-require("bootstrap/dist/css/bootstrap.css");
 require("./assets/stylesheet.css");
 //c3.js
-require("c3/c3.css");
+require("c3/c3.min.css");
 
 const React = require("react");
 

@@ -1,7 +1,5 @@
 module.exports = {
   entry: [
-		"webpack-dev-server/client?http://localhost:3002",
-		"webpack/hot/dev-server",
 		"./src/index.jsx"
 	],
   output: {

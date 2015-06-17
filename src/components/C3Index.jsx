@@ -56,8 +56,8 @@ let C3Index = React.createClass({
 				right: 10
 			},
 			size: {
-				width: 800,
-				height: 600
+				width: 640,
+				height: 480
 			},
 			subchart: true,
 			zoom: true,
@@ -78,6 +78,7 @@ let C3Index = React.createClass({
     return (
 			<div>
 				<h1>C3-React-Component</h1>
+        <h3>{this.state.DataStore.type}</h3>
 				<ButtonToolbar>
 				<SplitButton title={"Type"}>
 					<MenuItem eventKey='1' onClick={this.handleChartTypeChange.bind(null, "line")}>Line</MenuItem>

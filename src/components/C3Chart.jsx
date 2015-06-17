@@ -247,7 +247,6 @@ let C3Chart = React.createClass({
   render: function() {
 		return (
 			<div>
-				<h3>graph type: {this.props.type}</h3>
 				<div id="chartContainer"></div>
 			</div>);
   }

@@ -4,20 +4,20 @@ c3-react is a reusable react component for [c3](https://github.com/masayuki0812/
 
 ## How to install
 
-  ```
-  npm install c3-react
-  ```
+```
+npm install c3-react
+```
 
 ## How to use
 
-  ```
-  const C3Chart = require("./C3Chart.jsx");
-  ```
+```
+const C3Chart = require("./C3Chart.jsx");
+```
   
 * In parnet component
-  ```
-  <C3Chart data={data} type={type} options={options}/>
-  ```
+```
+<C3Chart data={data} type={type} options={options}/>
+```
 
 * data example:
 ```
@@ -65,8 +65,8 @@ let options = {
   },
   labels: true,
   axisLabel: {
-    x: "x軸",
-    y: "y軸"
+    x: "product",
+    y: "quantity"
   },
   onClick: function(d) {
     let categories = this.categories(); //c3 function, get categorical labels
@@ -84,6 +84,11 @@ let options = {
   $ npm install 
   $ npm run dev
   ```
+
+## Release Note
+
++ 0.1.6 - provide compiled es5 module
+
 
 ## Dependency
 + [C3.js](https://github.com/masayuki0812/c3) `<=0.4.10`

@@ -1,5 +1,2 @@
-require("babel/register");
-
-let C3Chart = require("./src/C3Chart.jsx");
-console.log(C3Chart);
+let C3Chart = require("./lib/C3Chart.js");
 module.exports = C3Chart;

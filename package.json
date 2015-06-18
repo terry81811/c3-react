@@ -3,7 +3,7 @@
   "version": "0.1.5",
   "author": "Ming-Hsun Tsai",
   "license": "MIT",
-  "main": "build/bundld.js",
+  "main": "index.js",
   "keywords": [
     "react",
     "component",
@@ -24,6 +24,7 @@
     "react": ">=0.13"
   },
   "dependencies": {
+    "babel": "^5.5.8",
     "c3": "^0.4.10",
     "d3": "^3.5.5",
     "lodash": "^3.9.3",

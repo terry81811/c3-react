@@ -1,9 +1,20 @@
-module.exports = {
-  entry: [
-		"webpack-dev-server/client?http://localhost:3002",
-		"webpack/hot/dev-server",
-		"./src/index.jsx"
-	],
+var env = process.env.WEBPACK_ENV || "index";
+var entry;
+
+if (env === "dev") {
+  entry = [
+    "webpack-dev-server/client?http://localhost:3002",
+    "webpack/hot/dev-server",
+    "./examples/index.jsx"
+  ];
+} else {
+  entry = [
+    "./examples/index.jsx"
+  ];
+}
+
+var config = {
+  entry: entry,
   output: {
     path: "./build",
     filename: "bundle.js"
@@ -17,3 +28,5 @@ module.exports = {
     ]
   }
 };
+
+module.exports = config;

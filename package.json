@@ -1,18 +1,45 @@
 {
-  "name": "my-project",
-  "version": "0.0.0",
-  "author": "",
-  "license": "ISC",
-  "main": "app/main.js",
+  "name": "c3-react",
+  "version": "0.1.6",
+  "author": "Ming-Hsun Tsai",
+  "license": "MIT",
+  "main": "index.js",
+  "keywords": [
+    "react",
+    "component",
+    "c3",
+    "d3",
+    "chart",
+    "graph"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/terry81811/c3-react"
+  },
+  "readmeFilename": "README.md",
   "scripts": {
     "dev": "webpack-dev-server --port 3002 --devtool eval --progress --hot --colors --content-base build"
   },
+  "peerDependencies": {
+    "react": ">=0.13"
+  },
   "dependencies": {
+    "c3": "^0.4.10",
+    "d3": "^3.5.5",
+    "lodash": "^3.9.3"
+  },
+  "devDependency": {
+    "react-bootstrap": "^0.23.0",
     "babel-core": "^5.4.7",
     "babel-loader": "^5.1.3",
+    "css-loader": "^0.14.4",
+    "file-loader": "^0.8.4",
+    "fluxxor": "^1.5.4",
     "jsx-loader": "^0.13.2",
-    "react": "^0.13.1",
     "react-hot-loader": "^1.2.7",
+    "react-router": "^0.13.3",
+    "style-loader": "^0.12.3",
+    "url-loader": "^0.5.6",
     "webpack": "^1.8.10",
     "webpack-dev-server": "^1.9.0"
   }

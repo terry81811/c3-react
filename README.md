@@ -1,21 +1,99 @@
-# react-d3-comparison
+# c3-react
 
-## Purpose
+c3-react is a reusable react component for [c3](https://github.com/masayuki0812/c3) charts
+[demo](http://terry81811.github.io/c3-react/build/#/c3)
 
-* to compare reusable d3 libraries in react/flux architect based on the following perspectives
+## How to install
 
-1. supported graph types
+```
+npm install c3-react
+```
 
-2. data-binding methods
+## How to use
 
-3. data/component lifecycles
+```
+const C3Chart = require("./C3Chart.jsx");
+```
+  
+* In parnet component
+```
+<C3Chart data={data} type={type} options={options}/>
+```
 
-4. callback functions (interactivity)
+* data example:
+```
+let data = [
+  {
+    key: "dataSource1"
+    values: [
+      {label: "A", value: 3},
+      {label: "B", value: 4}
+    ]
+  },
+  {
+    key: "dataSource2"
+    values: [
+      {label: "X", value: 7},
+      {label: "Y", value: 8}
+    ]
+  }
+]
+```
 
-## How to run
+* supported types
+```
+let type = "bar" // {"line","bar","pie", "multiBar","lineBar"}
+```
 
-1. Run the dev server
+* options example
+```
+let options = {
+  padding: {
+    top: 20,
+    bottom: 20,
+    left: 40,
+    right: 10
+  },
+  size: {
+    width: 800,
+    height: 600
+  },
+  subchart: true,
+  zoom: true,
+  grid: {
+    x: false,
+    y: true
+  },
+  labels: true,
+  axisLabel: {
+    x: "product",
+    y: "quantity"
+  },
+  onClick: function(d) {
+    let categories = this.categories(); //c3 function, get categorical labels
+    console.log(d);
+    console.log("you clicked {" + d.name + ": " + categories[d.x] + ": " + d.value + "}");
+  }
+};
+```
+
+
+## How to run examples
 
   ```
-  npm run dev
+  $ cd c3-react
+  $ npm install 
+  $ npm run dev
   ```
+
+## Release Note
+
++ 0.1.6 - provide compiled es5 module
+
+
+## Dependency
++ [C3.js](https://github.com/masayuki0812/c3) `<=0.4.10`
++ [D3.js](https://github.com/mbostock/d3) `<=3.5.0`
+
+## License
+MIT

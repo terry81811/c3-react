@@ -36438,6 +36438,7 @@
 					x: "x軸",
 					y: "y軸"
 				},
+				legend: false,
 				onClick: function onClick(d) {
 					var categories = this.categories();
 					console.log(d);
@@ -36574,7 +36575,8 @@
 				grid: React.PropTypes.shape({
 					x: React.PropTypes.bool,
 					y: React.PropTypes.bool
-				})
+				}),
+				legend: React.PropTypes.bool
 			})
 		},
 
@@ -36634,6 +36636,9 @@
 					x: { show: options.grid.x },
 					y: { show: options.grid.y }
 				};
+			}
+			if (options.legend === false) {
+				graphObject.legend = { show: options.legend };
 			}
 			return graphObject;
 		},

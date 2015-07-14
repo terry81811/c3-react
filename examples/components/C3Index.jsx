@@ -70,7 +70,12 @@ let C3Index = React.createClass({
 				y: "y軸"
 			},
       tick: {
-        rotate: 30
+        x: {
+          rotate: 30
+        },
+        y: {
+          count: 5
+        }
       },
       legend: false,
 			onClick: function(d) {

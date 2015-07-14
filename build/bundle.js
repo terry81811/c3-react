@@ -36381,157 +36381,162 @@
 	var C3Chart = __webpack_require__(373);
 
 	var C3Index = React.createClass({
-		displayName: "C3Component",
-		mixins: [FluxMixin, StoreWatchMixin("DataStore")],
+			displayName: "C3Component",
+			mixins: [FluxMixin, StoreWatchMixin("DataStore")],
 
-		getInitialState: function getInitialState() {
-			return {};
-		},
+			getInitialState: function getInitialState() {
+					return {};
+			},
 
-		getStateFromFlux: function getStateFromFlux() {
-			var flux = this.getFlux();
-			return {
-				DataStore: flux.store("DataStore").getState()
-			};
-		},
+			getStateFromFlux: function getStateFromFlux() {
+					var flux = this.getFlux();
+					return {
+							DataStore: flux.store("DataStore").getState()
+					};
+			},
 
-		handleNewDataClick: function handleNewDataClick() {
-			this.getFlux().actions.DataActions.newData();
-		},
+			handleNewDataClick: function handleNewDataClick() {
+					this.getFlux().actions.DataActions.newData();
+			},
 
-		handleAddEntryClick: function handleAddEntryClick() {
-			this.getFlux().actions.DataActions.addEntry();
-		},
+			handleAddEntryClick: function handleAddEntryClick() {
+					this.getFlux().actions.DataActions.addEntry();
+			},
 
-		handleRemoveEntryClick: function handleRemoveEntryClick() {
-			this.getFlux().actions.DataActions.removeEntry();
-		},
+			handleRemoveEntryClick: function handleRemoveEntryClick() {
+					this.getFlux().actions.DataActions.removeEntry();
+			},
 
-		handleRemoveDataClick: function handleRemoveDataClick() {
-			this.getFlux().actions.DataActions.removeData();
-		},
+			handleRemoveDataClick: function handleRemoveDataClick() {
+					this.getFlux().actions.DataActions.removeData();
+			},
 
-		handleChartTypeChange: function handleChartTypeChange(type) {
-			this.getFlux().actions.DataActions.changeChartType(type);
-		},
+			handleChartTypeChange: function handleChartTypeChange(type) {
+					this.getFlux().actions.DataActions.changeChartType(type);
+			},
 
-		render: function render() {
-			//sample options
-			var options = {
-				padding: {
-					top: 20,
-					bottom: 20,
-					left: 40,
-					right: 10
-				},
-				size: {
-					width: 640,
-					height: 480
-				},
-				subchart: true,
-				zoom: true,
-				grid: {
-					y: true
-				},
-				labels: false,
-				axisLabel: {
-					x: "x軸",
-					y: "y軸"
-				},
-				tick: {
-					rotate: 30
-				},
-				legend: false,
-				onClick: function onClick(d) {
-					var categories = this.categories();
-					console.log(d);
-					console.log("you clicked {" + d.name + ": " + categories[d.x] + ": " + d.value + "}");
-				}
-			};
-			return React.createElement(
-				"div",
-				null,
-				React.createElement(
-					"h1",
-					null,
-					"C3-React-Component"
-				),
-				React.createElement(
-					"h3",
-					null,
-					this.state.DataStore.type
-				),
-				React.createElement(
-					ButtonToolbar,
-					null,
-					React.createElement(
-						SplitButton,
-						{ title: "Type" },
-						React.createElement(
-							MenuItem,
-							{ eventKey: "1", onClick: this.handleChartTypeChange.bind(null, "line") },
-							"Line"
-						),
-						React.createElement(
-							MenuItem,
-							{ eventKey: "2", onClick: this.handleChartTypeChange.bind(null, "bar") },
-							"Bar"
-						),
-						React.createElement(
-							MenuItem,
-							{ eventKey: "3", onClick: this.handleChartTypeChange.bind(null, "pie") },
-							"Pie"
-						),
-						React.createElement(
-							MenuItem,
-							{ eventKey: "4", onClick: this.handleChartTypeChange.bind(null, "multiBar") },
-							"MultiBar"
-						),
-						React.createElement(
-							MenuItem,
-							{ eventKey: "5", onClick: this.handleChartTypeChange.bind(null, "lineBar") },
-							"Line+Bar"
-						),
-						React.createElement(
-							MenuItem,
-							{ eventKey: "6" },
-							"Other"
-						)
-					),
-					React.createElement(
-						SplitButton,
-						{ title: "Data" },
-						React.createElement(
-							MenuItem,
-							{ eventKey: "1", onClick: this.handleNewDataClick },
-							"New Data"
-						),
-						React.createElement(
-							MenuItem,
-							{ eventKey: "2", onClick: this.handleAddEntryClick },
-							"Add Entry"
-						),
-						React.createElement(
-							MenuItem,
-							{ eventKey: "3", onClick: this.handleRemoveEntryClick },
-							"Remove Entry"
-						),
-						React.createElement(
-							MenuItem,
-							{ eventKey: "4", onClick: this.handleRemoveDataClick },
-							"Remove Data"
-						)
-					)
-				),
-				React.createElement(
-					"div",
-					{ id: "chart" },
-					React.createElement(C3Chart, { data: this.state.DataStore.data,
-						type: this.state.DataStore.type,
-						options: options })
-				)
-			);
-		}
+			render: function render() {
+					//sample options
+					var options = {
+							padding: {
+									top: 20,
+									bottom: 20,
+									left: 40,
+									right: 10
+							},
+							size: {
+									width: 640,
+									height: 480
+							},
+							subchart: true,
+							zoom: true,
+							grid: {
+									y: true
+							},
+							labels: false,
+							axisLabel: {
+									x: "x軸",
+									y: "y軸"
+							},
+							tick: {
+									x: {
+											rotate: 30
+									},
+									y: {
+											count: 5
+									}
+							},
+							legend: false,
+							onClick: function onClick(d) {
+									var categories = this.categories();
+									console.log(d);
+									console.log("you clicked {" + d.name + ": " + categories[d.x] + ": " + d.value + "}");
+							}
+					};
+					return React.createElement(
+							"div",
+							null,
+							React.createElement(
+									"h1",
+									null,
+									"C3-React-Component"
+							),
+							React.createElement(
+									"h3",
+									null,
+									this.state.DataStore.type
+							),
+							React.createElement(
+									ButtonToolbar,
+									null,
+									React.createElement(
+											SplitButton,
+											{ title: "Type" },
+											React.createElement(
+													MenuItem,
+													{ eventKey: "1", onClick: this.handleChartTypeChange.bind(null, "line") },
+													"Line"
+											),
+											React.createElement(
+													MenuItem,
+													{ eventKey: "2", onClick: this.handleChartTypeChange.bind(null, "bar") },
+													"Bar"
+											),
+											React.createElement(
+													MenuItem,
+													{ eventKey: "3", onClick: this.handleChartTypeChange.bind(null, "pie") },
+													"Pie"
+											),
+											React.createElement(
+													MenuItem,
+													{ eventKey: "4", onClick: this.handleChartTypeChange.bind(null, "multiBar") },
+													"MultiBar"
+											),
+											React.createElement(
+													MenuItem,
+													{ eventKey: "5", onClick: this.handleChartTypeChange.bind(null, "lineBar") },
+													"Line+Bar"
+											),
+											React.createElement(
+													MenuItem,
+													{ eventKey: "6" },
+													"Other"
+											)
+									),
+									React.createElement(
+											SplitButton,
+											{ title: "Data" },
+											React.createElement(
+													MenuItem,
+													{ eventKey: "1", onClick: this.handleNewDataClick },
+													"New Data"
+											),
+											React.createElement(
+													MenuItem,
+													{ eventKey: "2", onClick: this.handleAddEntryClick },
+													"Add Entry"
+											),
+											React.createElement(
+													MenuItem,
+													{ eventKey: "3", onClick: this.handleRemoveEntryClick },
+													"Remove Entry"
+											),
+											React.createElement(
+													MenuItem,
+													{ eventKey: "4", onClick: this.handleRemoveDataClick },
+													"Remove Data"
+											)
+									)
+							),
+							React.createElement(
+									"div",
+									{ id: "chart" },
+									React.createElement(C3Chart, { data: this.state.DataStore.data,
+											type: this.state.DataStore.type,
+											options: options })
+							)
+					);
+			}
 	});
 	module.exports = C3Index;
 
@@ -36644,7 +36649,8 @@
 				graphObject.legend = { show: options.legend };
 			}
 			if (options.tick) {
-				graphObject.axis.x.tick = options.tick;
+				graphObject.axis.x.tick = options.tick.x;
+				graphObject.axis.y.tick = options.tick.y;
 			}
 			return graphObject;
 		},

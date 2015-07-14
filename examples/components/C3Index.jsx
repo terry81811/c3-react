@@ -69,6 +69,7 @@ let C3Index = React.createClass({
 				x: "x軸",
 				y: "y軸"
 			},
+      legend: false,
 			onClick: function(d) {
 				let categories = this.categories();
 				console.log(d);

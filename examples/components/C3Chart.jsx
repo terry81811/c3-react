@@ -31,7 +31,8 @@ let C3Chart = React.createClass({
 			grid: React.PropTypes.shape({
 				x: React.PropTypes.bool,
 				y: React.PropTypes.bool
-			})
+			}),
+      legend: React.PropTypes.bool,
 		})
   },
 
@@ -92,6 +93,9 @@ let C3Chart = React.createClass({
 				y:{show: options.grid.y}
 			};
 		}
+    if(options.legend === false){
+      graphObject.legend = {show: options.legend};
+    }
 		return graphObject;
   },
 

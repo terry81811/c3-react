@@ -97,7 +97,7 @@ let C3Chart = React.createClass({
       graphObject.legend = {show: options.legend};
     }
     if(options.tick){
-      graphObject.axis.x.tick = {culling:{max:options.tick.max}};
+      graphObject.axis.x.tick = options.tick;
     }
 		return graphObject;
   },

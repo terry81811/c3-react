@@ -36439,7 +36439,7 @@
 					y: "y軸"
 				},
 				tick: {
-					max: 4
+					rotate: 30
 				},
 				legend: false,
 				onClick: function onClick(d) {
@@ -36644,7 +36644,7 @@
 				graphObject.legend = { show: options.legend };
 			}
 			if (options.tick) {
-				graphObject.axis.x.tick = { culling: { max: options.tick.max } };
+				graphObject.axis.x.tick = options.tick;
 			}
 			return graphObject;
 		},

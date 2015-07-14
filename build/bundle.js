@@ -36595,7 +36595,7 @@
 			var graphObject = {
 				data: {},
 				axis: {},
-				bindto: "#chartContainer",
+				bindto: React.findDOMNode(this.refs.myTextInput),
 				color: {
 					pattern: this.colors(20)
 				}
@@ -36796,7 +36796,7 @@
 			return React.createElement(
 				"div",
 				null,
-				React.createElement("div", { id: "chartContainer" })
+				React.createElement("div", { id: "chartContainer", ref: "myTextInput" })
 			);
 		}
 	});

@@ -51,7 +51,7 @@ let C3Chart = React.createClass({
 		let graphObject = {
 			data: {},
 			axis: {},
-			bindto: "#chartContainer",
+			bindto: React.findDOMNode(this.refs.myTextInput),
 			color: {
 				pattern: this.colors(20)
 			}
@@ -251,7 +251,7 @@ let C3Chart = React.createClass({
   render: function() {
 		return (
 			<div>
-				<div id="chartContainer"></div>
+				<div id="chartContainer" ref="myTextInput" ></div>
 			</div>);
   }
 });

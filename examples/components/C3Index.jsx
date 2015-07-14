@@ -64,11 +64,14 @@ let C3Index = React.createClass({
 			grid: {
 				y: true
 			},
-			labels: true,
+			labels: false,
 			axisLabel: {
 				x: "x軸",
 				y: "y軸"
 			},
+      tick: {
+        max: 4
+      },
       legend: false,
 			onClick: function(d) {
 				let categories = this.categories();

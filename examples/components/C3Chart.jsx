@@ -50,7 +50,7 @@ let C3Chart = React.createClass({
   graphObject: function() {
 		let graphObject = {
 			data: {},
-			axis: {},
+			axis: {x:null, y:null},
 			bindto: React.findDOMNode(this.refs.myTextInput),
 			color: {
 				pattern: this.colors(20)
@@ -71,7 +71,7 @@ let C3Chart = React.createClass({
 				height: options.size.height
 			};
 		}
-		if(options.labels){
+		if(options.labels === false){
 			graphObject.data.labels = options.labels;
 		}
 		if(options.onClick){
@@ -95,6 +95,9 @@ let C3Chart = React.createClass({
 		}
     if(options.legend === false){
       graphObject.legend = {show: options.legend};
+    }
+    if(options.tick){
+      graphObject.axis.x.tick = {culling:{max:options.tick.max}};
     }
 		return graphObject;
   },

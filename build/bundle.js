@@ -36433,10 +36433,13 @@
 				grid: {
 					y: true
 				},
-				labels: true,
+				labels: false,
 				axisLabel: {
 					x: "x軸",
 					y: "y軸"
+				},
+				tick: {
+					max: 4
 				},
 				legend: false,
 				onClick: function onClick(d) {
@@ -36594,7 +36597,7 @@
 		graphObject: function graphObject() {
 			var graphObject = {
 				data: {},
-				axis: {},
+				axis: { x: null, y: null },
 				bindto: React.findDOMNode(this.refs.myTextInput),
 				color: {
 					pattern: this.colors(20)
@@ -36615,7 +36618,7 @@
 					height: options.size.height
 				};
 			}
-			if (options.labels) {
+			if (options.labels === false) {
 				graphObject.data.labels = options.labels;
 			}
 			if (options.onClick) {
@@ -36639,6 +36642,9 @@
 			}
 			if (options.legend === false) {
 				graphObject.legend = { show: options.legend };
+			}
+			if (options.tick) {
+				graphObject.axis.x.tick = { culling: { max: options.tick.max } };
 			}
 			return graphObject;
 		},

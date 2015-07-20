@@ -36677,7 +36677,6 @@
 		},
 
 		drawGraphLine: function drawGraphLine() {
-			console.log("drawing line");
 			var graphObject = this.graphObject();
 			var graphObjectData = {
 				json: this.props.data[0].values,
@@ -36696,7 +36695,6 @@
 		},
 
 		drawGraphBar: function drawGraphBar() {
-			console.log("drawing bar");
 			var graphObject = this.graphObject();
 			var graphObjectData = {
 				x: "x",
@@ -36726,7 +36724,6 @@
 		},
 
 		drawGraphPie: function drawGraphPie() {
-			console.log("drawing pie");
 			var graphObject = this.graphObject();
 			var graphObjectData = {
 				columns: this.pieChartDataPreparator(this.props.data[0].values),
@@ -36758,7 +36755,6 @@
 		},
 
 		drawGraphMultiBar: function drawGraphMultiBar() {
-			console.log("drawing multiBar");
 			var graphObject = this.graphObject();
 			var graphObjectData = {
 				x: "x",
@@ -36778,7 +36774,6 @@
 		},
 
 		drawGraphlLineBar: function drawGraphlLineBar() {
-			console.log("drawing LineBar");
 			var graphObject = this.graphObject();
 			var graphObjectData = {
 				x: "x",

@@ -125,7 +125,6 @@ let C3Chart = React.createClass({
 	},
 
 	drawGraphLine: function() {
-		console.log("drawing line");
 		let graphObject = this.graphObject();
 		let graphObjectData = {
 			json: this.props.data[0].values,
@@ -144,7 +143,6 @@ let C3Chart = React.createClass({
 	},
 
 	drawGraphBar: function() {
-		console.log("drawing bar");
 		let graphObject = this.graphObject();
 		let graphObjectData = {
 			x: "x",
@@ -174,7 +172,6 @@ let C3Chart = React.createClass({
 	},
 
 	drawGraphPie: function() {
-		console.log("drawing pie");
 		let graphObject = this.graphObject();
 		let graphObjectData = {
 			columns: this.pieChartDataPreparator(this.props.data[0].values),
@@ -206,7 +203,6 @@ let C3Chart = React.createClass({
 	},
 
 	drawGraphMultiBar: function() {
-		console.log("drawing multiBar");
 		let graphObject = this.graphObject();
 		let graphObjectData = {
 			x: "x",
@@ -226,7 +222,6 @@ let C3Chart = React.createClass({
 	},
 
 	drawGraphlLineBar: function() {
-		console.log("drawing LineBar");
 		let graphObject = this.graphObject();
 		let graphObjectData = {
 			x: "x",
